@@ -1,9 +1,9 @@
-let egresos = {
+var egresos = {
   Renta: 900,
   Ropa: 400
 };
 
-let ingresos = {
+var ingresos = {
   Quincena: 9000,
   Venta: 400
 };
@@ -44,8 +44,8 @@ const formatoPorcentaje = valor => {
 };
 
 const cargarCabecero = () => {
-  const presupuesto = totalIngresos() - totalEgresos();
-  const porcentajeEgreso = totalEgresos() / totalIngresos();
+  var presupuesto = totalIngresos() - totalEgresos();
+  var porcentajeEgreso = totalEgresos() / totalIngresos();
 
   console.log(formatoMoneda(presupuesto));
   console.log(formatoPorcentaje(porcentajeEgreso));
