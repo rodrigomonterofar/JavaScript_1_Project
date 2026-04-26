@@ -1,31 +1,31 @@
-var egresos = {
-  Renta: 900,
-  Ropa: 400
-};
+const ingresos = [
+  new Ingreso('Salario',20000),
+  new Ingreso('Venta Auto', 50000)
+];
 
-var ingresos = {
-  Quincena: 9000,
-  Venta: 400
-};
+const egresos = [
+  new Egreso ('Renta',4000),
+  new Egreso ('Ropa', 800)
+];
 
 const totalIngresos = () => {
-  let totalIngreso = 0;
+    let totalIngreso = 0;
 
-  for (let ingreso in ingresos) {
-    totalIngreso += ingresos[ingreso];
-  }
+    for (let ingreso of ingresos) {
+        totalIngreso += ingreso.valor;
+    }
 
-  return totalIngreso;
+    return totalIngreso;
 };
 
 const totalEgresos = () => {
-  let totalEgreso = 0;
+    let totalEgreso = 0;
 
-  for (let egreso in egresos) {
-    totalEgreso += egresos[egreso];
-  }
+    for (let egreso of egresos) {
+        totalEgreso += egreso.valor;
+    }
 
-  return totalEgreso;
+    return totalEgreso;
 };
 
 const formatoMoneda = valor => {
