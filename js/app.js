@@ -26,9 +26,10 @@ const cargarCabecero = () => {
         porcentajeEgreso = totalEgresos() / totalIngresos();
     }
 
-    if (totalIngresos() === 0) {
-        porcentajeEgreso = 0;
+    if (totalIngresos() === 0 && totalEgresos() > 0) {
+        porcentajeEgreso = 1;
     }
+
 
     document.getElementById("presupuesto").innerHTML = formatoMoneda(presupuesto);
     document.getElementById("porcentaje").innerHTML = formatoPorcentaje(porcentajeEgreso);
