@@ -17,8 +17,18 @@ const cargarApp = () => {
 };
 
 const cargarCabecero = () => {
+
     let presupuesto = totalIngresos() - totalEgresos();
-    let porcentajeEgreso = totalEgresos() / totalIngresos();
+
+    let porcentajeEgreso = 0;
+
+    if (totalEgresos() > 0) {
+        porcentajeEgreso = totalEgresos() / totalIngresos();
+    }
+
+    if (totalIngresos() === 0) {
+        porcentajeEgreso = 0;
+    }
 
     document.getElementById("presupuesto").innerHTML = formatoMoneda(presupuesto);
     document.getElementById("porcentaje").innerHTML = formatoPorcentaje(porcentajeEgreso);
